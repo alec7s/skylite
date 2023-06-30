@@ -1,0 +1,429 @@
+/******************* 
+TABLE OF CONTENTS
+********************
+    1. Theme 
+
+    2. Page Layout
+
+    3. Global Styles
+
+    4. Custom Components
+
+    5. Animations
+*/
+
+/*******************
+1. THEME
+********************/
+:root {
+    --txt-clr-dark: rgb(63 70 80 / 90%);
+    --txt-clr-light: rgb(255 255 255 / 80%);
+    --border-clr: rgb(107 107 112 / 61%);
+    --content-bx-bg-clr: rgb(91 95 106 / 39%);
+    --body-bg-clr: rgb(59 61 68 / 92%);   
+    
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 200;
+    letter-spacing: 0.8px;
+    font-size: 1.2rem;
+    color: var(--txt-clr-light);
+}
+
+/*********************
+2. PAGE LAYOUT
+**********************/
+html, body {
+    height: 100%;
+}
+
+body {
+    display: grid;
+    grid-template-areas: 
+    'header'                     
+    'overview'
+    'weather'
+    'footer';
+    margin: 0;
+    gap: 1.5rem;
+}
+
+header {
+    grid-area: header;
+    background-color: white;
+    background-image: url(https://i.imgur.com/O8K7upm.jpg);
+    background-size: cover;
+    width: 100%;
+    box-shadow: 0px 1px 4px 0px rgb(36 38 40 / 40%);
+    position: sticky;
+    z-index: 1;
+    top: 0;
+}
+
+#overview {
+    grid-area: overview;
+}
+
+#weather-cntr {
+    grid-area: weather;
+}
+
+footer {
+    grid-area: footer;
+    padding: 0.25rem 0;
+    font-size: 1.2rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.outer-pad {
+    padding: 0rem 10%;
+}
+
+.flex-bx {
+    display: flex;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-algn-ctr {
+    display: flex;
+    align-items: center;
+}
+
+.flex-jst-ctr {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-ctr-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-jst-even {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.flex-jst-btwn {
+    display: flex;
+    justify-content: space-between;
+}
+
+/********************
+2. GLOBAL SELECTORS
+*********************/
+html {
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--body-bg-clr);
+    overflow-wrap: break-word;
+}
+
+h1 {
+    font-size: 3.75rem;
+    margin: 0;
+    letter-spacing: 0.9rem;
+    text-shadow: #495062 0.04em 0.04em 0.05em;
+    font-weight: 200;
+    text-align: center;
+}
+
+h2 {
+    font-size: 40px;
+    margin: 0;
+    text-shadow: #35383ea6 0.01em 0.02em 0.08rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-weight: 400;
+    font-size: 1.1rem;
+    color: rgb(175 188 227);
+    text-shadow: 2px 1px 4px #3d4048;
+    margin: 0;
+}
+
+article {
+    font-size: 1.2rem;
+}
+
+section {
+    box-sizing: border-box;
+}
+
+p {
+    text-shadow:#495062 0.08em 0.1em 0.075em;
+    margin: 0;
+}
+
+a {
+    color: var(--txt-clr-light);
+}
+
+button {
+    background-color: rgb(204 214 243 / 62%);
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: rgba(229, 232, 243, 0.62);
+}
+
+a:hover {
+    color: rgb(128, 141, 146);
+}
+
+/*********************
+4. CUSTOM COMPONENTS
+**********************/
+
+/*
+    HEADER
+*/
+.hdr {
+    background-color: rgb(65 66 74 / 68%);
+    align-items: center;
+    padding: 0.5rem 0.5rem 1.5rem 0.5rem;
+}
+
+.hdr p {
+    text-align: center;
+    margin: 0.5rem 0 1rem 0;
+}
+
+/*
+    SEARCH BAR
+*/
+.search-cntr > * {
+    color: var(--txt-clr-dark);
+}
+
+.search-btn {
+    border: 1px solid rgb(77 93 114);
+    border-radius: 0 8px 8px 0;
+    box-shadow: 7px 4px 14px 0px rgb(63 70 80 / 92%);
+    width: 2.3rem;
+}
+
+.search-btn svg {
+    font-size: 1.3rem;
+}
+
+input {
+    width: min(70vw, 350px);
+    text-align: center;
+    padding: 0.1rem 0.75rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.08rem;
+    font-weight: 100;
+    border-radius: 8px 0 0 8px;
+    border: 1px solid rgb(77 93 114);
+    outline: none;
+    background-color: rgb(243 243 243 / 75%);
+    box-shadow: 3px 2px 8px rgb(63 70 80 / 50%);
+}
+
+input::placeholder {
+    font-style:italic;
+    font-size: 1.2rem;
+    letter-spacing: 0.03rem;
+    color: rgba(63, 70, 80, 60%);
+}
+
+#overview {
+    font-size: 1.2rem;
+    gap: 1.25rem;
+}
+
+#overview p {
+    line-height: 1.5rem;
+}
+
+#app-instructions {
+    gap: 1rem;
+}
+
+/*
+    OPENWEATHER LOGO CONTAINER
+*/
+.img-cntr {
+    float: left;
+    padding: 3vh 3vw;
+    border-radius: 0.5rem;
+    background-color: rgb(106 111 126 / 23%);
+    margin: 0 2vw 0 0;
+}
+
+.img-cntr img {
+    width: min(275px, 40vw);
+}
+
+/*
+    WEATHER WIDGET
+*/
+.weather-cntr {
+    gap: 0.5rem;
+    opacity: 0;
+    transition: opacity 1.25s ease-in-out;
+}
+
+.weather-icon-cntr {
+    background-color: rgb(106 111 126 / 48%);
+    border-radius: 2rem;
+}
+
+#dtls-temp {
+    display: grid;
+    grid-template-areas:
+        'curr-temp high'
+        'curr-temp low'
+        'summary summary';
+    background-color: rgb(106 111 126 / 23%);
+    border-radius: 1rem;
+    padding: 0rem 1rem 1rem 1rem;
+    width: max(13rem, 50%);
+    align-self: center;
+    justify-content: center;
+}
+
+#curr-temp { 
+    font-weight: 350;
+    grid-area: curr-temp;
+    font-size: 110px;
+    letter-spacing: 5px;
+    text-shadow: #35383e6b 0.01em 0.02em 0.04rem;
+    letter-spacing: 1px; 
+    justify-self: center;
+}
+
+#curr-temp > svg {
+    font-size: 1.2rem;
+    position: relative;
+    top: 1.3rem;
+    right: 0.2rem;
+    align-self: flex-start;
+}
+
+#summary {
+    grid-area: summary;
+    text-align: center;
+}
+
+.weather-dtls {
+    gap: 1rem;
+}
+
+#high {
+    align-self: end;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+#low {
+    align-self: start;
+}
+
+#high, #low {
+    justify-self: start;
+}
+
+.dtls-tbl {
+    margin-right: 1rem;
+}
+
+.dtls-col {
+    display: grid;
+    grid: repeat(3, 1fr) / 1fr 2fr;
+    column-gap: 0.5rem;
+    row-gap: 1rem;
+}
+
+#sunrise > svg, #sunset > svg {
+    position: relative;
+    bottom: 0.5vh;
+}
+
+#sunrise > svg {
+    transform: rotate(90deg);
+    color: #fff5aefa;
+}
+
+#sunset > svg {
+    transform: rotate(270deg);
+    color: #ffa635cc;
+}
+
+#humidity {
+    color: #c5d1ff;
+}
+
+#clouds {
+    color: #c5c1c1;
+}
+
+#pressure {
+    color: #e9d7d7;
+}
+
+/*
+    FOOTER
+*/
+.ftr-links{
+    gap: 0.2rem;
+}
+
+.ftr-links svg {
+    font-size:1.4rem;
+}
+
+/*
+    ERROR DIALOG
+*/
+dialog {
+    z-index: 2;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 1rem;
+    background-color: rgb(91 95 106);
+    border: 1px solid rgb(204 214 243 / 62%);
+    color: var(--txt-clr-light);
+}
+
+.close-btn {
+    width: 4rem;
+    border: 1px solid rgb(69 75 82);
+    border-radius: 1rem;
+    box-shadow: 0px 1px 2px 0px rgb(63 70 80 / 92%);
+    color: var(--txt-clr-dark);
+    letter-spacing: 0.02rem;
+    padding: 0.2rem 0 0.2rem 0;
+}
+
+/********************
+5. ANIMATIONS
+*********************/
+.blur-bg {
+    filter: blur(4px);
+}
+
+.expand-weather {
+    height: fit-content;
+    width: 100%;
+    padding: 1rem 0;
+    border: 1px solid var(--border-clr);  
+}
+
+.fade-in {
+    opacity: 100%;
+}
+/*------------------*/
