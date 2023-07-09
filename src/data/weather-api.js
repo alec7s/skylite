@@ -11,7 +11,7 @@ export const WeatherAPI = (function(){
             return await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=${key}&units=imperial`, {mode: 'cors'});
         }
         catch(error) {
-            throw Error(errorText);
+            throw Error('failed to access OpenWeather API');
         }
     }
 
@@ -40,7 +40,7 @@ export const WeatherAPI = (function(){
         }
         catch(error) {
 
-            throw Error(errorText);
+            throw Error('Problem accessing OpenWeather API data');
         }
     }
 
