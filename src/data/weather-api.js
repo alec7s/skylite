@@ -5,7 +5,8 @@ export const WeatherAPI = (function(){
     async function _fetchForecastData(input) {
         try {
             //const netlifyResponse = '/.netlify/ext-api/key'; 
-            const key = '/.netlify/ext-api/key';
+            //const key = '/.netlify/ext-api/key';
+            const key = process.env.OW_API;
             console.log(key);
             return await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=${key}&units=imperial`, {mode: 'cors'});
         }
