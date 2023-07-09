@@ -1,9 +1,9 @@
 'use strict';
 
 export default async (request, context) => {
-    const KEY = Netlify.env.get(OW_API);
+    const OW_KEY = Netlify.env.get(OW_API);
   
-    return new Response(KEY, {
+    return new Response(OW_KEY, {
       headers: { "content-type": "text/html" },
     });
 };
