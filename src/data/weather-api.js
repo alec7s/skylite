@@ -1,10 +1,12 @@
 'use strict';
 
+import '../../auth/key';
+
 export const WeatherAPI = (function(){
 
     async function _fetchForecastData(input) {
-        console.log(OW_API)
-        const key = OW_API;
+        console.log(OW_KEY)
+        const key = OW_KEY;
         try {
             //const netlifyResponse = '/.netlify/ext-api/key'; 
             //const key = '/.netlify/ext-api/key';
