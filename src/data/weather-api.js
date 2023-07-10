@@ -1,6 +1,6 @@
 'use strict';
 
-import '../../auth/key';
+//import '../../auth/key';
 
 export const WeatherAPI = (function(){
 
