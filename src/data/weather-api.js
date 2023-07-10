@@ -7,7 +7,7 @@ export const WeatherAPI = (function(){
     async function _fetchForecastData(input) {
         try {
             //const netlifyResponse = '/.netlify/ext-api/key'; 
-            const key = '/.netlify/ext-api/key';
+            const key = '/.netlify/auth/key';
 
             console.log(key);
             console.log(JSON.stringify(key))
