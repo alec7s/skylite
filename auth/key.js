@@ -13,6 +13,6 @@ exports.handler = async function (event, context) {
 
   return {
     statusCode: 200,
-    body: JSON.stringify({ value: KEY }),
+    body: JSON.stringify({ message: KEY }),
   };  
 };

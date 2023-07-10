@@ -5,16 +5,14 @@
 export const WeatherAPI = (function(){
 
     async function _fetchForecastData(input) {
-        //console.log(OW_KEY)
-        const key = '/.netlify/ext-api/key';
         try {
             //const netlifyResponse = '/.netlify/ext-api/key'; 
-            //const key = '/.netlify/ext-api/key';
+            const key = '/.netlify/ext-api/key';
 
-            console.log(key.body);
+            console.log(key);
             //return await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=${key}&units=imperial`, {mode: 'cors'});
 
-            return alert(key.body.value)
+            return alert(key.body.message)
         }
         catch(error) {
             throw Error('failed to access OpenWeather API');
