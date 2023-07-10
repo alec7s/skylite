@@ -17,7 +17,7 @@
   };  
 } */
 
-export default async (event, context) => {
+export default async function getKey (event, context) {
   //const KEY = process.env.OW_API;
 
   return {
