@@ -1,4 +1,8 @@
 [build]
     command = 'npm run build'
     functions = 'src/auth/'
-    publish = 'build'
+    publish = 'dist/'
+
+[dev]
+  command = "npm run build"
+  publish = "dist"
