@@ -1,8 +1,0 @@
-[build]
-    command = 'npm run build'
-    functions = 'auth/'
-    publish = 'dist/'
-
-[dev]
-  command = "npm run build"
-  publish = "dist/"

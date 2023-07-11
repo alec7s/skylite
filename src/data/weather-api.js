@@ -1,19 +1,13 @@
 'use strict';
 
-//import '../../auth/key';
-
 export const WeatherAPI = (function(){
 
-    async function _fetchForecastData(input) {
+    async function _fetchWeatherJson(input) {
         try {
-            //const netlifyResponse = '/.netlify/ext-api/key'; 
-            const key = await fetch('/.netlify/auth/key');
-
-            console.log(key);
-            console.log(JSON.stringify(key))
-            //return await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&APPID=${key}&units=imperial`, {mode: 'cors'});
-
-            return alert(key.body.message)
+            const url = `/.netlify/functions/req-handler?input=${input}`;
+            const netResp = await fetch(url);
+            
+            return netResp;
         }
         catch(error) {
             throw Error('failed to access OpenWeather API');
@@ -22,7 +16,7 @@ export const WeatherAPI = (function(){
 
     function _extractAppData(json) {
         try {
-            const appData = {
+            const queryData = {
                 //values are property names from OpenWeather API
                 loc: json.name,
                 unxTimestamp: json.dt,
@@ -41,25 +35,23 @@ export const WeatherAPI = (function(){
                 icon: json.weather[0].icon,
             };
 
-            return appData;
-        }
-        catch(error) {
-
+            return queryData;
+        } catch(error) {
             throw Error('Problem accessing OpenWeather API data');
         }
     }
 
     async function query(input) {
         let data = null;
-        const response = await _fetchForecastData(input);
-        const status = response.status;
+        const resp = await _fetchWeatherJson(input);
+        const status = resp.status;
 
-        if(response.ok) {
-            const json = await response.json(); 
-            data = _extractAppData(json);
+        if(resp.ok) {
+            const respJson = await resp.json();
+            data = _extractAppData(respJson);
         }
 
-        return { data, status };
+        return { data, status }; 
     } 
 
     return { query } 
